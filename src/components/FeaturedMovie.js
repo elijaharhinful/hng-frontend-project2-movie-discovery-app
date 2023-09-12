@@ -15,7 +15,7 @@ const FeaturedMovie = () => {
           url: "https://api.themoviedb.org/3/trending/movie/day?language=en-US",
           headers: {
             accept: "application/json",
-            Authorization: "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhNDI4MmMxM2M4N2U2NGE5YWJlMWZmMzAyYWI0MmNiOCIsInN1YiI6IjY0ZmYzMjRkZWIxNGZhMDEwMGU2ZGNiZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.yEAwo_uOAJCkwa_qqlMRJv_N6yv6Vj_0POYxBFONgmM",
+            Authorization: "Bearer "+ process.env.TMDB_ACCESS_TOKEN
           },
         };
         const response = await axios.request(options);
