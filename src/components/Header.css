@@ -1,0 +1,130 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  height: 48rem;
+  background-color: black;
+  background-image: url("../components/assets/john_wick.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: white;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: inherit;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust the alpha value (0.5) to control the darkness of the overlay */
+    z-index: 0; /* Ensure the overlay is above other elements */
+  }
+  
+
+.navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 1.5rem 0;
+  z-index: 1;
+}
+
+.navigation .search-bar {
+  position: relative;
+}
+
+.navigation .search-bar input {
+    width: 35rem;
+  border-radius: 5px;
+  border: 3px solid white;
+  background-color: transparent;
+  color: white;
+  padding: 0.4rem;
+}
+
+.search-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 100%;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+.navigation .search-bar input::placeholder {
+  color: white;
+}
+
+.sign-in {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sign-in .text{
+    margin-right: 1rem;
+}
+
+.hero{
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin: 4rem 14rem;
+    z-index: 1;
+}
+
+.hero .head{
+    font-size: 2rem;
+    margin: 1rem 0;
+    letter-spacing: 0.3rem;
+}
+
+.hero .rating{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1rem;
+}
+
+.hero .rating .imdb{
+    display: flex;
+    flex-direction: row;
+    margin-right: 2rem;
+}
+.hero .rating .imdb .icon{
+    margin-right: 0.6rem;
+    display: flex;
+}
+
+.hero .rating .tomato{
+    display: flex;
+    flex-direction: row;
+}
+
+.hero .rating .tomato .icon{
+    margin-right: 0.6rem;
+    display: flex;
+}
+
+.hero .trailer-btn{
+    text-decoration: none;
+    color: white;
+    background-color: #BE123C;
+    margin: 1rem 0;
+    border-radius: 5px;
+    width: 40%;
+    display: flex;
+    padding: 0.5rem;
+}
+
+.hero .trailer-btn img{
+    margin-right: 0.2rem;
+}
+
+.hero .trailer-btn:hover{
+    background-color: #850424;
+}

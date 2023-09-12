@@ -1,0 +1,28 @@
+footer {
+    margin: 4rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-media-icons{
+    width: 20%;
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    justify-content: space-evenly;
+    margin: 1rem;
+}
+
+
+ul li{
+    display: inline-block;
+    margin: 1rem 1.5rem;
+    font-weight: bold;
+}
+
+.copyright{
+    margin: 1rem 0 0 0;
+    color: rgb(91, 91, 91);
+}

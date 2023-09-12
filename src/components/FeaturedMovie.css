@@ -1,0 +1,29 @@
+.featured-movies {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.featured-movies .head {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 14rem;
+}
+
+.featured-movies .head h3{
+    font-weight: bold;
+    font-size: 1.7rem;
+}
+
+.featured-movies .head .see-more {
+  color: #e11d48;
+}
+
+.grid-cards{
+  width: 80%;
+  display: grid;
+  grid-template-columns: 16rem 16rem 16rem 16rem;
+  grid-gap: 5rem;
+  padding: 2rem 14rem;
+}
