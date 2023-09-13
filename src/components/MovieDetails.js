@@ -18,9 +18,7 @@ const MovieDetails = () => {
           headers: {
             accept: "application/json",
             Authorization:
-              process.env.TMDB_ACCESS_TOKEN ||
-              "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhNDI4MmMxM2M4N2U2NGE5YWJlMWZmMzAyYWI0MmNiOCIsInN1YiI6IjY0ZmYzMjRkZWIxNGZhMDEwMGU2ZGNiZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.yEAwo_uOAJCkwa_qqlMRJv_N6yv6Vj_0POYxBFONgmM",
-          },
+              process.env.TMDB_ACCESS_TOKEN },
         };
         const response = await axios.request(options);
         setMovieDetails(response.data);
@@ -48,6 +46,7 @@ const MovieDetails = () => {
         release_date={releaseDateUTC}
         runtime={movieDetails.runtime}
         overview={movieDetails.overview}
+        poster_path={movieDetails.poster_path}
       />
     </div>
   );

@@ -7,6 +7,8 @@ import right from "../components/assets/right.svg";
 
 const FeaturedMovie = () => {
   const [featuredMovie, setFeaturedMovie] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   useEffect(() => {
     const fetchFeaturedMovie = async () => {
       try {
@@ -15,12 +17,15 @@ const FeaturedMovie = () => {
           url: "https://api.themoviedb.org/3/movie/top_rated",
           headers: {
             accept: "application/json",
-            Authorization: process.env.TMDB_ACCESS_TOKEN || "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhNDI4MmMxM2M4N2U2NGE5YWJlMWZmMzAyYWI0MmNiOCIsInN1YiI6IjY0ZmYzMjRkZWIxNGZhMDEwMGU2ZGNiZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.yEAwo_uOAJCkwa_qqlMRJv_N6yv6Vj_0POYxBFONgmM",
-          },
+            Authorization:
+              process.env.TMDB_ACCESS_TOKEN },
         };
         const response = await axios.request(options);
         setFeaturedMovie(response.data.results.slice(0, 10));
+        setLoading(false);
       } catch (error) {
+        setError("Failed to fetch featured movies. Please try again later.");
+        setLoading(false);
         console.error(error);
       }
     };
@@ -36,7 +41,7 @@ const FeaturedMovie = () => {
         </div>
         <div className="see-more">
           <Link to="/" className="see-more">
-            <span className="text">See more </span> 
+            <span className="text">See more </span>
             <span>
               <img src={right} alt="chevron-right"></img>
             </span>
@@ -44,20 +49,20 @@ const FeaturedMovie = () => {
         </div>
       </div>
       <div className="grid-cards">
-        {featuredMovie ? (
+        {loading ? (
+          <p className="loading">Loading...</p>
+        ) : error ? (
+          <p className="error">{error}</p>
+        ) : (
           featuredMovie.map((movie) => (
             <MovieCard
               key={movie.id}
               movie_id={movie.id}
               title={movie.title}
               release_date={movie.release_date}
-              // runtime={movie.runtime}
-              // overview={movie.overview}
               poster_path={movie.poster_path}
             />
           ))
-        ) : (
-          <p className="loading">Loading...</p>
         )}
       </div>
     </div>
