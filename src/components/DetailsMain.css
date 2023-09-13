@@ -23,12 +23,11 @@
   justify-items: flex-start;
   margin: 2rem 0 ;
 }
-
-.details-main .head .title{
-  margin-right:3rem;
+.details-main .head  span{
+  font-weight: normal;
 }
 .details-main .head .date{
-  margin-right:3rem;
+  margin:0 1rem;
 }
 .details-main .overview{
   width: 100%;

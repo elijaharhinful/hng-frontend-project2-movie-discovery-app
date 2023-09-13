@@ -12,13 +12,14 @@ const FeaturedMovie = () => {
   useEffect(() => {
     const fetchFeaturedMovie = async () => {
       try {
+        console.log(process.env.REACT_APP_TMDB_ACCESS_TOKEN);
         const options = {
-          method: "GET",
-          url: "https://api.themoviedb.org/3/movie/top_rated",
+          method: 'GET',
+          url: 'https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1',
           headers: {
-            accept: "application/json",
-            Authorization:
-              process.env.TMDB_ACCESS_TOKEN },
+            accept: 'application/json',
+            Authorization: 'Bearer ' + process.env.REACT_APP_TMDB_ACCESS_TOKEN,
+          }
         };
         const response = await axios.request(options);
         setFeaturedMovie(response.data.results.slice(0, 10));

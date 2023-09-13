@@ -32,7 +32,7 @@ const Sidenav = () => {
         <div className="desktop-menu">
           <div className="navbar">
             <ul>
-              <Link className="navbar-link">
+              <Link className="navbar-link" to={"/"}>
                 <li>
                   <img src={home} alt="home"></img>
                   <span>Home</span>
@@ -50,36 +50,18 @@ const Sidenav = () => {
                 <img src={calender} alt="calender"></img>
                 <span>Upcoming</span>
               </li>
-              <li className="hide-logout">
+              <li>
                 <img src={logout} alt="Logout"></img>
                 <span>Logout</span>
               </li>
             </ul>
           </div>
-          <div className="quiz">
-            <div className="top">
-              <p>
-                <b>Play movies quizes and earn free tickets</b>
-              </p>
-              <br></br>
-              <p>50k people are playing now</p>
-            </div>
-            <div className="bottom">
-              <button>Start Playing</button>
-            </div>
-          </div>
-          <Link to={"/"} className="link">
-            <div className="logout">
-              <img src={logout} alt="logout"></img>
-              <span>Logout</span>
-            </div>
-          </Link>
         </div>
 
         <div className={`mobile-menu ${isMobileMenuOpen ? "open" : ""}`}>
           <div className="navbar">
             <ul>
-              <Link className="navbar-link">
+              <Link className="navbar-link" to={"/"}>
                 <li>
                   <img src={home} alt="home"></img>
                   <span>Home</span>
@@ -97,7 +79,7 @@ const Sidenav = () => {
                 <img src={calender} alt="calender"></img>
                 <span>Upcoming</span>
               </li>
-              <li className="hide-logout">
+              <li>
                 <img src={logout} alt="Logout"></img>
                 <span>Logout</span>
               </li>

@@ -9,7 +9,7 @@ const DetailsMain = ({
   poster_path,
 }) => {
   const imageUrl = `https://image.tmdb.org/t/p/w500${poster_path}`;
-  
+
   return (
     <section className="details-main">
       <div className="vid-thumbnail">
@@ -17,15 +17,20 @@ const DetailsMain = ({
       </div>
       <div className="head">
         <div className="title">
-          <h2 data-testid="movie-title">Title: {movie_title}</h2>
+          <h2>
+            Title: <span data-testid="movie-title">{movie_title}</span>
+          </h2>
         </div>
         <div className="date">
-          <h2 data-testid="movie-release-date">
-            Release date (UTC): {release_date}
+          <h2>
+            Release date (UTC):
+            <span data-testid="movie-release-date"> {release_date}</span>
           </h2>
         </div>
         <div className="runtime">
-          <h2 data-testid="movie-runtime">Runtime: {runtime} minutes</h2>
+          <h2>
+            Runtime: <span data-testid="movie-runtime">{runtime} minutes</span>
+          </h2>
         </div>
       </div>
       <div className="overview">
