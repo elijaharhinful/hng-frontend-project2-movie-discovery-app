@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
 import logo from "../components/assets/Logo.svg";
@@ -7,18 +7,23 @@ import tomato from "../components/assets/tomato.svg";
 import menu from "../components/assets/Menu.svg";
 import search from "../components/assets/Search.svg";
 import play from "../components/assets/Play.svg";
+import tv from "../components/assets/tv.svg";
 
-let url = ""
+let url = "/"
 
 const Header = () => {
-  // const [isNavExpanded, setIsNavExpanded] = useState(false);
   return (
     <header className="header">
       <div className="overlay"></div>
       <nav className="navigation">
-        <Link to="/">
+        <Link to="/" className="desktop-logo">
         <div className="logo">
           <img src={logo} alt="Logo" />
+        </div>
+        </Link>
+        <Link to="/" className="mobile-logo">
+        <div className="logo">
+          <img src={tv} alt="Logo" />
         </div>
         </Link>
         <div className="search-bar">
@@ -54,7 +59,7 @@ const Header = () => {
           </div>
         </div>
 
-        <div className="text">
+        <div className="description">
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. mollitia,
             molestiae quas vel sint commodi repudiandae voluptatum laborum

@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import MovieCard from "./MovieCard";
 import axios from "axios";
-import "../components/FeaturedMovie.css";
-import play from "../components/assets/Play.svg";
+import "./FeaturedMovie.css";
+import right from "../components/assets/right.svg";
 
 const FeaturedMovie = () => {
   const [featuredMovie, setFeaturedMovie] = useState([]);
@@ -12,10 +12,10 @@ const FeaturedMovie = () => {
       try {
         const options = {
           method: "GET",
-          url: "https://api.themoviedb.org/3/trending/movie/day?language=en-US",
+          url: "https://api.themoviedb.org/3/movie/top_rated",
           headers: {
             accept: "application/json",
-            Authorization: "Bearer "+ process.env.TMDB_ACCESS_TOKEN
+            Authorization: process.env.TMDB_ACCESS_TOKEN || "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhNDI4MmMxM2M4N2U2NGE5YWJlMWZmMzAyYWI0MmNiOCIsInN1YiI6IjY0ZmYzMjRkZWIxNGZhMDEwMGU2ZGNiZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.yEAwo_uOAJCkwa_qqlMRJv_N6yv6Vj_0POYxBFONgmM",
           },
         };
         const response = await axios.request(options);
@@ -35,10 +35,10 @@ const FeaturedMovie = () => {
           <h3>Featured Movie</h3>
         </div>
         <div className="see-more">
-          <Link to="/">
-            See more
+          <Link to="/" className="see-more">
+            <span className="text">See more </span> 
             <span>
-              <img src={play} alt="chevron-right"></img>
+              <img src={right} alt="chevron-right"></img>
             </span>
           </Link>
         </div>
@@ -57,7 +57,7 @@ const FeaturedMovie = () => {
             />
           ))
         ) : (
-          <p>Loading...</p>
+          <p className="loading">Loading...</p>
         )}
       </div>
     </div>

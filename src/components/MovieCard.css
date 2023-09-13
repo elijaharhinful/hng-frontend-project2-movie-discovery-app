@@ -5,16 +5,21 @@
     cursor: pointer;
 }
 
-.fav{
+.movie-card .card-link{
+    text-decoration: none;
+    color: inherit;
+}
+
+.movie-card .fav{
     position: absolute;
     right: 0;
     padding: 1rem;
     cursor: pointer;
 }
-.poster{
+.movie-card .poster{
     width: 100%;
 }
 
-h2{
+.movie-card h2{
     text-align: left;
 }

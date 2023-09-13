@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import Sidenav from "../components/Sidenav";
+import DetailsMain from "../components/DetailsMain";
+import "./MovieDetails.css";
 
 const MovieDetails = () => {
   const { movieId } = useParams();
@@ -14,7 +17,9 @@ const MovieDetails = () => {
           url: `https://api.themoviedb.org/3/movie/${movieId}?language=en-US`,
           headers: {
             accept: "application/json",
-            Authorization: "Bearer " + process.env.TMDB_API_KEY
+            Authorization:
+              process.env.TMDB_ACCESS_TOKEN ||
+              "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhNDI4MmMxM2M4N2U2NGE5YWJlMWZmMzAyYWI0MmNiOCIsInN1YiI6IjY0ZmYzMjRkZWIxNGZhMDEwMGU2ZGNiZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.yEAwo_uOAJCkwa_qqlMRJv_N6yv6Vj_0POYxBFONgmM",
           },
         };
         const response = await axios.request(options);
@@ -31,11 +36,19 @@ const MovieDetails = () => {
     return <p>Loading...</p>;
   }
 
+  // Convert release_date to standard UTC format
+  const releaseDate = new Date(movieDetails.release_date);
+  const releaseDateUTC = releaseDate.toISOString();
+  
   return (
-    <div>
-      <h2>{movieDetails.title}</h2>
-      <p>{movieDetails.overview}</p>
-      {/* Render other movie details */}
+    <div className="movie-details">
+      <Sidenav />
+      <DetailsMain
+        movie_title={movieDetails.title}
+        release_date={releaseDateUTC}
+        runtime={movieDetails.runtime}
+        overview={movieDetails.overview}
+      />
     </div>
   );
 };

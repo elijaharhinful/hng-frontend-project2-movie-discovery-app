@@ -1,0 +1,11 @@
+.movie-details{
+    display: flex;
+    flex-direction: row;
+}
+
+@media screen and (max-width: 768px) {
+    .movie-details{
+        display: flex;
+        flex-direction: column;
+    }
+}

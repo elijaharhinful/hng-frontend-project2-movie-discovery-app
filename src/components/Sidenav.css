@@ -1,0 +1,145 @@
+.sidenav {
+  border: 1px solid black;
+  border-radius: 0rem 3rem 3rem 0;
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  min-height: 100vh;
+  color: #424242;
+}
+
+.sidenav .sidenav-navigation {
+  display: flex;
+  flex-direction: column;
+}
+.sidenav .navbar {
+  width: 100%;
+}
+.sidenav.navbar .navbar-link{
+  text-decoration: none;
+  color: inherit;
+}
+.sidenav ul {
+  margin: 2rem 0;
+  padding: 0rem;
+}
+.sidenav ul li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-items: center;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.sidenav ul .active {
+  background-color: #ff5e5e;
+}
+
+.sidenav ul li img {
+  margin-right: 1rem;
+}
+
+.sidenav .hide-logout{
+  display: none;
+}
+
+.sidenav .quiz {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff1f2;
+  border: 1px solid #ff5e5e;
+  border-radius: 1rem;
+  padding: 1rem;
+  margin: 2rem;
+  width: 60%;
+}
+
+.sidenav .quiz .top {
+  margin: 2rem 0 1rem 0;
+}
+.sidenav .quiz button {
+  border: 3px solid #fecdd3;
+  background-color: #fecdd3;
+  border-radius: 3rem;
+  padding: 0.3rem;
+  color: #e11d48;
+  margin-top: 1rem;
+}
+.sidenav .link {
+  text-decoration: none;
+  color: #424242;
+  font-weight: 600;
+}
+
+.sidenav .logout {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.sidenav .logout img {
+  margin-right: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .sidenav {
+    border: 0px;
+    border-radius: 0rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    color: #424242;
+    padding: 2rem;
+  }
+  
+  .sidenav .sidenav-navigation {
+    display: flex;
+    flex-direction: column;
+  }
+  .sidenav .navbar {
+    width: 100%;
+  }
+  .sidenav .navbar .navbar-link{
+    text-decoration: none;
+    color: inherit;
+  }
+  .sidenav ul {
+    margin: 2rem 0;
+    padding: 0rem;
+  }
+  .sidenav ul li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-items: center;
+    padding: 1rem;
+    margin: 1rem 0;
+  }
+  
+  .sidenav ul .active {
+    background-color: #ff5e5e;
+  }
+
+  .sidenav .hide-logout{
+    display: block;
+  }
+  .sidenav .quiz {
+    display: none;
+  }
+  
+  .sidenav .link {
+    text-decoration: none;
+    color: #424242;
+    font-weight: 600;
+  }
+  
+  .sidenav .logout {
+    display: none;
+  }
+  
+  .sidenav .logout img {
+    margin-right: 1rem;
+  }
+}

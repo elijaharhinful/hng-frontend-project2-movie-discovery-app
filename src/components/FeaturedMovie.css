@@ -18,12 +18,51 @@
 
 .featured-movies .head .see-more {
   color: #e11d48;
+  text-decoration: none;
 }
 
-.grid-cards{
+
+.featured-movies .grid-cards{
   width: 80%;
   display: grid;
   grid-template-columns: 16rem 16rem 16rem 16rem;
   grid-gap: 5rem;
   padding: 2rem 14rem;
+}
+
+.featured-movies .loading{
+  font-size: 1.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .featured-movies {
+    margin-top: 1rem;
+  }
+  
+  .featured-movies .head {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 1rem;
+  }
+  .featured-movies .see-more{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .featured-movies .see-more .text{
+    margin-right: 0.3rem;
+  }
+  .featured-movies .head h3{
+      font-weight: normal;
+      font-size: 1.5rem;
+  }
+  
+  .featured-movies .grid-cards{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 4rem;
+  }
 }

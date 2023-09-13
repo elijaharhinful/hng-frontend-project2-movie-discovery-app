@@ -2,21 +2,27 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import FeaturedMovie from "./components/FeaturedMovie";
-import MovieCard from "./components/MovieCard";
-import MovieDetails from "./components/MovieDetails";
 import Footer from "./components/Footer";
+import MovieDetails from "./components/MovieDetails";
 
 function App() {
   return (
     <div>
-      <Header />
-      <FeaturedMovie />
-
+      
       <Routes>
-        <Route path="/" element={<MovieCard />} />
+        <Route path="/" element={<Home />} />
         <Route path="/movie/:movieId" element={<MovieDetails />} />
       </Routes>
+      
+    </div>
+  );
+}
 
+function Home() {
+  return (
+    <div>
+      <Header />
+      <FeaturedMovie />
       <Footer />
     </div>
   );
