@@ -60,7 +60,7 @@ const FeaturedMovie = () => {
               key={movie.id}
               movie_id={movie.id}
               title={movie.title}
-              release_date={movie.release_date}
+              release_date={movie.release_date ? new Date(movie.release_date).toISOString() : ""}
               poster_path={movie.poster_path}
             />
           ))
