@@ -29,8 +29,7 @@ const DetailsMain = ({
         </div>
         <div className="runtime">
           <h2>
-            Runtime: <span data-testid="movie-runtime">{runtime} minutes</span>
-          </h2>
+            Runtime: <span data-testid="movie-runtime">{runtime} </span> <span>minutes</span></h2>
         </div>
       </div>
       <div className="overview">
